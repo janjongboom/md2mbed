@@ -1,0 +1,20 @@
+{
+  "name": "md-to-mbed",
+  "description": "Takes in markdown (via stdin) and spits out mbed formatted data via stdout",
+  "preferGlobal": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "md2mbed.js",
+  "bin": {
+    "md2mbed": "md2mbed.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jan Jongboom <janjongboom@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "markdown-to-ast": "^3.4.0"
+  }
+}
