@@ -32,11 +32,9 @@ Joyful times ahead! No more manual conversion.
 
 Some random text...
 
-```js
-var a = 7;
-var b = 42;
-console.log(a*b);
-```
+    var a = 7;
+    var b = 42;
+    console.log(a*b);
 ```
 
 Out:
