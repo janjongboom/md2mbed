@@ -1,5 +1,5 @@
 {
-  "name": "md-to-mbed",
+  "name": "md2mbed",
   "description": "Takes in markdown (via stdin) and spits out mbed formatted data via stdout",
   "preferGlobal": true,
   "version": "1.0.0",
