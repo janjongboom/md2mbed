@@ -101,7 +101,7 @@ function renderNode(node) {
       break;
 
     case 'Code':
-      text += '**' + node.value + '##';
+      text += '##' + node.value + '##';
       break;
 
     case 'List':
