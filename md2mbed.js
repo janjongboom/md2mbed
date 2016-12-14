@@ -16,7 +16,7 @@ let stdinTimeout = setTimeout(() => {
 
 function go() {
   clearTimeout(stdinTimeout);
-  
+
   let ast = m2ast(article);
 
   let output = '';
@@ -148,7 +148,12 @@ function renderNode(node) {
       break;
 
     case 'Image':
-      text += '{{' + node.url + '}}';
+      text += '{{' + node.url;
+      if (node.alt) {
+        text += '|' + node.alt;
+      }
+      text += '}}';
+      break;
 
     case 'linkReference':
     case 'definition':
