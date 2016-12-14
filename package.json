@@ -2,7 +2,7 @@
   "name": "md2mbed",
   "description": "Takes in markdown (via stdin) and spits out mbed formatted data via stdout",
   "preferGlobal": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "md2mbed.js",
   "bin": {
