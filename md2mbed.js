@@ -38,9 +38,9 @@ process.stdin.on('end', go);
 function renderNode(node) {
   let text = '';
 
-  if (node.inList) {
+  if (node.indentation) {
     for (let c of (node.children || [])) {
-      c.inList = true;
+      c.indentation = node.indentation;
     }
   }
 
@@ -72,7 +72,7 @@ function renderNode(node) {
       for (let c of node.children) {
         text += renderNode(c);
       }
-      if (!node.inList) {
+      if (typeof node.indentation !== 'number') {
         text += '\n\n';
       }
       break;
@@ -105,20 +105,18 @@ function renderNode(node) {
       break;
 
     case 'List':
-      let li = node.ordered ? '#' : '*';
+      node.indentation = (node.indentation || 0) + 1;
 
-      let indent = '';
-
-      if (node.inList) {
-        text += '\n';
-        indent = Array.apply(null, Array(4)).map(() => ' ').join('');
-      }
+      let liSymbol = node.ordered ? '#' : '*';
+      let li = Array.apply(null, Array(node.indentation)).map(() => liSymbol).join('');
 
       for (let c of node.children) {
-        text += indent + li + ' ' + renderNode(c) + '\n';
+        c.indentation = node.indentation;
+
+        text += li + ' ' + renderNode(c);
       }
 
-      if (!node.inList) {
+      if (node.indentation === 1) {
         text += '\n';
       }
 
@@ -126,8 +124,11 @@ function renderNode(node) {
 
     case 'ListItem':
       for (let c of node.children) {
-        c.inList = true;
         text += renderNode(c);
+
+        if (c.type !== 'List') {
+          text += '\n';
+        }
       }
       break;
 
