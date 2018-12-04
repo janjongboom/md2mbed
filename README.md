@@ -1,6 +1,6 @@
 # Markdown to mbed
 
-We use some archaic, home-grown formatting system on developer.mbed.org, while the rest of the world uses Markdown. This tool takes in Markdown and spits out mbed-formatted text.
+The formatting system on os.mbed.com uses a custom formatting system based on [Creole](https://en.wikipedia.org/wiki/Creole_(markup)), while the rest of the world uses Markdown. This tool takes in Markdown and spits out Mbed-formatted text.
 
 ## Usage
 

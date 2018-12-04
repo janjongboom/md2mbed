@@ -26,3 +26,15 @@ console.log(a*b);
 2. Another item
     * Nesting of a non-numbered list
 3. Que tal?
+
+And a table with headers:
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| More Content  | Content Cell  |
+
+A table without headers:
+
+| Content Cell  | Content Cell  |
+| More Content  | Content Cell  |
