@@ -156,6 +156,34 @@ function renderNode(node) {
       text += '}}';
       break;
 
+    case 'table':
+      // GH flavored markdown always requires a header row
+      if (node.children.length >= 1) node.children[0].isHeaderRow = 1;
+
+      for (let c of node.children) {
+        text += renderNode(c);
+      }
+      text += '\n';
+      break;
+
+    case 'tableRow':
+      text += '| ';
+      for (let c of node.children) {
+        if (node.isHeaderRow) {
+          text += '=';
+        }
+        text += renderNode(c);
+      }
+      text += '\n';
+      break;
+
+    case 'tableCell':
+      for (let c of node.children) {
+        text += renderNode(c);
+        text += ' |';
+      }
+      break;
+
     case 'linkReference':
     case 'definition':
       // ignore
