@@ -167,7 +167,7 @@ function renderNode(node) {
       break;
 
     case 'tableRow':
-      text += '| ';
+      text += '|';
       for (let c of node.children) {
         if (node.isHeaderRow) {
           text += '=';
@@ -180,8 +180,8 @@ function renderNode(node) {
     case 'tableCell':
       for (let c of node.children) {
         text += renderNode(c);
-        text += ' |';
       }
+      text += ' |';
       break;
 
     case 'linkReference':

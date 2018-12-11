@@ -2,7 +2,7 @@
   "name": "md2mbed",
   "description": "",
   "preferGlobal": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "md2mbed.js",
   "bin": {
     "md2mbed": "md2mbed.js"
